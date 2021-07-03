@@ -1,4 +1,4 @@
-package qaops.automation.api.test;
+package qaops.automation.api.restTests;
 
 import org.apache.http.HttpStatus;
 import org.junit.Test;

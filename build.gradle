@@ -4,12 +4,21 @@ plugins {
 }
 
 repositories {
-    jcenter()
+    mavenCentral()
 }
 
 dependencies {
+    //compile fileTree(dir: 'libs', include: '*.jar')
     implementation 'com.fasterxml.jackson.core:jackson-databind:2.10.3'
-
+    testImplementation 'org.hamcrest:hamcrest:2.2'
     testImplementation 'junit:junit:4.+'
     testImplementation 'io.rest-assured:rest-assured:4.+'
+    compileOnly 'org.projectlombok:lombok:1.18.20'
+    annotationProcessor 'org.projectlombok:lombok:1.18.20'
+    testCompileOnly 'org.projectlombok:lombok:1.18.20'
+    testAnnotationProcessor 'org.projectlombok:lombok:1.18.20'
+    // https://mvnrepository.com/artifact/org.assertj/assertj-core
+    testImplementation group: 'org.assertj', name: 'assertj-core', version: '3.20.2'
+
+
 }

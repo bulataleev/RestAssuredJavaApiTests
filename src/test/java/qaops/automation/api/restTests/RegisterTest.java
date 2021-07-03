@@ -1,4 +1,4 @@
-package qaops.automation.api.test;
+package qaops.automation.api.restTests;
 
 import io.restassured.RestAssured;
 import io.restassured.builder.ResponseSpecBuilder;
