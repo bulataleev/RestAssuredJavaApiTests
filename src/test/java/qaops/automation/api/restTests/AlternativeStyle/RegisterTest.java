@@ -1,4 +1,4 @@
-package qaops.automation.api.restTests;
+package qaops.automation.api.restTests.AlternativeStyle;
 
 import io.restassured.RestAssured;
 import io.restassured.builder.ResponseSpecBuilder;

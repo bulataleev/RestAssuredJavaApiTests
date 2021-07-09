@@ -1,4 +1,4 @@
-package qaops.automation.api.restTests;
+package qaops.automation.api.restTests.AlternativeStyle;
 
 import org.apache.http.HttpStatus;
 import org.junit.Test;
