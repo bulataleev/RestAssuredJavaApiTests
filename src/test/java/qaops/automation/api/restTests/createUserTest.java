@@ -2,8 +2,7 @@ package qaops.automation.api.restTests;
 
 import org.junit.BeforeClass;
 import org.junit.Test;
-import org.junit.jupiter.api.BeforeAll;
-import qaops.automation.api.pojos.CreateUserRequest;
+import qaops.automation.api.pojos.UserRequest;
 import qaops.automation.api.pojos.CreateUserResponse;
 import qaops.automation.api.steps.UsersSteps;
 import qaops.automation.api.utils.RestWrapper;
@@ -20,10 +19,10 @@ public class createUserTest {
     }
 
     @Test
-    public void createUserwithWrapper(){
-        CreateUserRequest rq = UserGenerator.getSimpleUser();
+    public void createUserwithWrapper(){ //best method for tests
+        UserRequest rq = UserGenerator.getSimpleUser();
 
-        CreateUserResponse rs = api.createUser(rq);
+        CreateUserResponse rs = api.user.createUser(rq);
         assertThat(rs)
                 .isNotNull()
                 .extracting(CreateUserResponse::getName)
@@ -35,7 +34,7 @@ public class createUserTest {
 //        CreateUserRequest rq = new CreateUserRequest();
 //        rq.setName("sample");
 //        rq.setJob("automation"); -- old way
-        CreateUserRequest rq = CreateUserRequest
+        UserRequest rq = UserRequest
                 .builder()
                 .name("Bulat")
                 .job("automation")
@@ -65,7 +64,7 @@ public class createUserTest {
 //                .name("Bulat2")
 //                .job("automation2")
 //                .build(); //by using builder pattern
-        CreateUserRequest rq = UserGenerator.getSimpleUser();
+        UserRequest rq = UserGenerator.getSimpleUser();
 
         UsersSteps userApi = new UsersSteps();
         CreateUserResponse rs = userApi.createUser(rq);
@@ -76,7 +75,7 @@ public class createUserTest {
 
     @Test
     public void createUserwithGenerator() {
-        CreateUserRequest rq = UserGenerator.getSimpleUser();
+        UserRequest rq = UserGenerator.getSimpleUser();
 
         UsersSteps userApi = new UsersSteps();
         CreateUserResponse rs = userApi.createUser(rq);

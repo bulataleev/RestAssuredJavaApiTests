@@ -34,7 +34,7 @@ public class getUsersTest {
 
     @Test
     public void getUsersWithWrapper() {
-        assertThat(api.getUsers()).extracting(UserPojoResponse::getEmail).contains("george.bluth@reqres.in");
+        assertThat(api.user.getUsers()).extracting(UserPojoResponse::getEmail).contains("george.bluth@reqres.in");
     }
 
     @Test

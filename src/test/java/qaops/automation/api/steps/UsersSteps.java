@@ -3,7 +3,7 @@ package qaops.automation.api.steps;
 import io.restassured.builder.RequestSpecBuilder;
 import io.restassured.http.ContentType;
 import io.restassured.specification.RequestSpecification;
-import qaops.automation.api.pojos.CreateUserRequest;
+import qaops.automation.api.pojos.UserRequest;
 import qaops.automation.api.pojos.CreateUserResponse;
 import qaops.automation.api.pojos.UserPojoResponse;
 
@@ -21,7 +21,7 @@ public class UsersSteps {
 
     private CreateUserResponse user;
 
-    public CreateUserResponse createUser(CreateUserRequest rq) {
+    public CreateUserResponse createUser(UserRequest rq) {
         user = given().spec(REQ_SPEC).body(rq).post().as(CreateUserResponse.class);
         return user;
     }

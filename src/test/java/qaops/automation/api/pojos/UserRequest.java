@@ -8,7 +8,7 @@ import lombok.NoArgsConstructor;
 @Data
 @Builder
 @NoArgsConstructor @AllArgsConstructor
-public class CreateUserRequest {
+public class UserRequest {
     private String name;
     private String job;
 

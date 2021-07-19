@@ -20,6 +20,6 @@ public abstract class RestService {
                 .setBaseUri(BASE_URL)
                 .setBasePath(getBasePath())
                 .setContentType(ContentType.JSON)
-                .build();
+                .build().log().everything(true);
     }
 }

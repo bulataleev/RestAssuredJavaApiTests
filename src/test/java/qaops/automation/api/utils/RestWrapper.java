@@ -1,17 +1,10 @@
 package qaops.automation.api.utils;
 
-import io.restassured.builder.RequestSpecBuilder;
 import io.restassured.http.ContentType;
 import io.restassured.http.Cookies;
-import io.restassured.specification.RequestSpecification;
-import qaops.automation.api.pojos.CreateUserRequest;
-import qaops.automation.api.pojos.CreateUserResponse;
 import qaops.automation.api.pojos.UserLogin;
-import qaops.automation.api.pojos.UserPojoResponse;
 import qaops.automation.api.utils.services.OrderService;
 import qaops.automation.api.utils.services.UserService;
-
-import java.util.List;
 
 import static io.restassured.RestAssured.given;
 

@@ -1,7 +1,7 @@
 package qaops.automation.api.utils.services;
 
 import io.restassured.http.Cookies;
-import qaops.automation.api.pojos.CreateUserRequest;
+import qaops.automation.api.pojos.UserRequest;
 import qaops.automation.api.pojos.CreateUserResponse;
 import qaops.automation.api.pojos.UserPojoResponse;
 
@@ -20,7 +20,7 @@ public class UserService extends RestService {
         super(cookies);
     }
 
-    public CreateUserResponse createUser(CreateUserRequest rq){
+    public CreateUserResponse createUser(UserRequest rq){
         return given().spec(REQ_SPEC).body(rq).post().as(CreateUserResponse.class);
     }
 
