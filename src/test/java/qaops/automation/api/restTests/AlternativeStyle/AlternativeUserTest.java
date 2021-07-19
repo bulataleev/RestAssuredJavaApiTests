@@ -34,11 +34,11 @@ public class AlternativeUserTest {
     public void testSpecificPageIsDisplayed() {
         String uri = getUri(LIST_USERS_ENDPOINT);
 
-        given().
+        given().log().everything(true).
             param("page","2").
         when().
             get(uri).
-        then().
+        then().log().everything(true).
             contentType(ContentType.JSON).
             statusCode(HttpStatus.SC_OK).
             body("page", is(2)).
