@@ -1,14 +1,34 @@
 package qaops.automation.api.restTests;
 
+import org.junit.BeforeClass;
 import org.junit.Test;
+import org.junit.jupiter.api.BeforeAll;
 import qaops.automation.api.pojos.CreateUserRequest;
 import qaops.automation.api.pojos.CreateUserResponse;
 import qaops.automation.api.steps.UsersSteps;
+import qaops.automation.api.utils.RestWrapper;
 import qaops.automation.api.utils.UserGenerator;
 
 import static org.assertj.core.api.Assertions.assertThat;
 
 public class createUserTest {
+    private static RestWrapper api;
+
+    @BeforeClass
+    public static void prepareClient(){
+        api = RestWrapper.loginAs("eve.holt@reqres.in", "citylicka");
+    }
+
+    @Test
+    public void createUserwithWrapper(){
+        CreateUserRequest rq = UserGenerator.getSimpleUser();
+
+        CreateUserResponse rs = api.createUser(rq);
+        assertThat(rs)
+                .isNotNull()
+                .extracting(CreateUserResponse::getName)
+                .isEqualTo(rq.getName());
+    }
 
     @Test
     public void createUser(){

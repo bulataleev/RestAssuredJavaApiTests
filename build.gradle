@@ -10,6 +10,7 @@ repositories {
 dependencies {
     //compile fileTree(dir: 'libs', include: '*.jar')
     implementation 'com.fasterxml.jackson.core:jackson-databind:2.10.3'
+    implementation 'org.junit.jupiter:junit-jupiter:5.7.0'
     testImplementation 'org.hamcrest:hamcrest:2.2'
     testImplementation 'junit:junit:4.+'
     testImplementation 'io.rest-assured:rest-assured:4.+'

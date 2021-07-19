@@ -6,8 +6,8 @@ public class UserGenerator {
 
     public static CreateUserRequest getSimpleUser(){
         return CreateUserRequest.builder()
-                .name("simple1")
-                .job("automation1")
+                .name("simple2")
+                .job("automation2")
                 .build();
     }
 }
