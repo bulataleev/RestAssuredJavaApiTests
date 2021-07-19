@@ -37,6 +37,11 @@ public class getUsersTest {
         assertThat(api.user.getUsers()).extracting(UserPojoResponse::getEmail).contains("george.bluth@reqres.in");
     }
 
+
+
+
+
+//---------experiments
     @Test
     public void getUsers() { // static getUsers method is used from UsersSteps class
         List<UserPojoResponse> users = UsersSteps.getUsers();
