@@ -24,14 +24,6 @@ public class getUsersTest {
         api = RestWrapper.loginAs("eve.holt@reqres.in", "citylicka");
     }
 
-    private static final RequestSpecification REQ_SPEC =
-            new RequestSpecBuilder()
-                    .setBaseUri("https://reqres.in/api")
-                    .setBasePath("/users")
-                    .addCookie("bearer", "123")
-                    .setContentType(ContentType.JSON)
-                    .build().log().everything(true);
-
     @Test
     public void getUsersWithWrapper() {
         assertThat(api.user.getUsers()).extracting(UserPojoResponse::getEmail).contains("george.bluth@reqres.in");
@@ -42,6 +34,14 @@ public class getUsersTest {
 
 
 //---------experiments
+    private static final RequestSpecification REQ_SPEC =
+            new RequestSpecBuilder()
+                    .setBaseUri("https://reqres.in/api")
+                    .setBasePath("/users")
+                    .addCookie("bearer", "123")
+                    .setContentType(ContentType.JSON)
+                    .build().log().everything(true);
+
     @Test
     public void getUsers() { // static getUsers method is used from UsersSteps class
         List<UserPojoResponse> users = UsersSteps.getUsers();
