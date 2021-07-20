@@ -1,5 +1,7 @@
 package qaops.automation.api.restTests;
 
+import io.qameta.allure.Description;
+import io.qameta.allure.Story;
 import io.restassured.builder.RequestSpecBuilder;
 import io.restassured.http.ContentType;
 import io.restassured.specification.RequestSpecification;
@@ -19,6 +21,7 @@ import org.junit.jupiter.api.DisplayName;
 
 
 @DisplayName("Тесты работы с API клиента")
+//@Feature("Api for getting users")
 public class getUsersTest {
     private static RestWrapper api;
 
@@ -27,9 +30,11 @@ public class getUsersTest {
         api = RestWrapper.loginAs("eve.holt@reqres.in", "citylicka");
     }
 
-    @Test
+
     @DisplayName("Human-readable test name")
-    //@Description("sdas")
+    @Story("Listing all users")
+    @Description("uses UserService to get users")
+    @Test
     public void getUsersWithWrapper() {
         assertThat(api.user.getUsers()).extracting(UserPojoResponse::getEmail).contains("george.bluth@reqres.in");
     }

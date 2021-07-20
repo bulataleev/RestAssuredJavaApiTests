@@ -11,6 +11,8 @@ java {
 }
 allure {
     version = "2.14.0"
+    autoconfigure = true
+    aspectjweaver = true
     downloadLinkFormat = "https://repo.maven.apache.org/maven2/io/qameta/allure/allure-commandline/%s/allure-commandline-%<s.zip"
 }
 
@@ -36,6 +38,7 @@ dependencies {
     testImplementation 'org.junit.jupiter:junit-jupiter-api:5.7.0'
     testRuntimeOnly 'org.junit.jupiter:junit-jupiter-engine:5.7.0'
     testRuntimeOnly 'io.qameta.allure:allure-junit5:2.14.0'
+    testImplementation 'io.qameta.allure:allure-junit5:2.14.0'
     testRuntimeOnly("org.slf4j:slf4j-simple:1.7.31")
     testAnnotationProcessor 'org.projectlombok:lombok:1.18.16'
 }
