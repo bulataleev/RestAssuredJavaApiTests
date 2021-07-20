@@ -3,8 +3,8 @@ package qaops.automation.api.restTests.AlternativeStyle;
 import io.restassured.RestAssured;
 import io.restassured.http.ContentType;
 import org.apache.http.HttpStatus;
-import org.junit.BeforeClass;
-import org.junit.Test;
+import org.junit.jupiter.api.BeforeAll;
+import org.junit.jupiter.api.Test;
 import qaops.automation.api.domain.User;
 
 import java.util.HashMap;
@@ -25,7 +25,7 @@ public class AlternativeUserTest {
     private static final String CREATE_USER_ENDPOINT = "/user";
     private static final String SHOW_USER_ENDPOINT = "/users/{userId}";
 
-    @BeforeClass
+    @BeforeAll
     public static void setup() {
         RestAssured.enableLoggingOfRequestAndResponseIfValidationFails();
     }

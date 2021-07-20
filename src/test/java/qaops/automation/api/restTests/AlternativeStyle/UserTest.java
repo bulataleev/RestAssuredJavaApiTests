@@ -1,7 +1,7 @@
 package qaops.automation.api.restTests.AlternativeStyle;
 
 import org.apache.http.HttpStatus;
-import org.junit.Test;
+import org.junit.jupiter.api.Test;
 import qaops.automation.api.domain.User;
 
 import java.util.HashMap;

@@ -3,8 +3,8 @@ package qaops.automation.api.restTests.AlternativeStyle;
 import io.restassured.RestAssured;
 import io.restassured.builder.ResponseSpecBuilder;
 import org.apache.http.HttpStatus;
-import org.junit.BeforeClass;
-import org.junit.Test;
+import org.junit.jupiter.api.BeforeAll;
+import org.junit.jupiter.api.Test;
 import qaops.automation.api.domain.User;
 
 import static io.restassured.RestAssured.given;
@@ -15,7 +15,7 @@ public class RegisterTest extends BaseTest {
     private static final String REGISTER_NEW_USER_ENDPOINT = "/register";
     private static final String LOGIN_USER_ENDPOINT = "/login";
 
-    @BeforeClass
+    @BeforeAll
     public static void setupRegister() {
         RestAssured.responseSpecification = new ResponseSpecBuilder().
                 expectStatusCode(HttpStatus.SC_BAD_REQUEST).

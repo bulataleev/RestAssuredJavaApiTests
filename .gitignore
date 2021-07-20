@@ -28,9 +28,12 @@ hs_err_pid*
 
 # Ignore Gradle build output directory
 build
+!gradle-wrapper.jar
 
 .idea
 
 .classpath
 .project
 .settings
+.allure
+out

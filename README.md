@@ -1,7 +1,9 @@
 
-### Commands
-* `gradle init` - creates the gradle project
+### Command
 * `gradle wrapper` - needed for creating create the gradle wrapper in order to run the gradlew
-* `./gradlew test` - starts the test in 'src/test' directry
+* `./gradlew clean test` - starts the test in 'src/test direcotry
+* `./gradlew allureReport` - generate report
+* `./gradlew allureServe` - starts the Allure Server
+
 
 

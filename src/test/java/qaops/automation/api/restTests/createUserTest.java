@@ -1,7 +1,7 @@
 package qaops.automation.api.restTests;
 
-import org.junit.BeforeClass;
-import org.junit.Test;
+import org.junit.jupiter.api.BeforeAll;
+import org.junit.jupiter.api.Test;
 import qaops.automation.api.pojos.UserRequest;
 import qaops.automation.api.pojos.CreateUserResponse;
 import qaops.automation.api.steps.UsersSteps;
@@ -13,7 +13,7 @@ import static org.assertj.core.api.Assertions.assertThat;
 public class createUserTest {
     private static RestWrapper api;
 
-    @BeforeClass
+    @BeforeAll
     public static void prepareClient(){
         api = RestWrapper.loginAs("eve.holt@reqres.in", "citylicka");
     }
